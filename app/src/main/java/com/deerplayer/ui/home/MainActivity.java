@@ -16,6 +16,8 @@ import com.deerplayer.app.base.BaseActivity;
 import com.deerplayer.ui.home.adapter.ViewPagerAdapter;
 import com.deerplayer.ui.home.fragment.AboutUsFragment;
 import com.deerplayer.ui.home.fragment.HomeFragment;
+import com.deerplayer.ui.local.config.FileInfo;
+import com.deerplayer.ui.local.fragment.FileInfoFragment;
 import com.deerplayer.ui.qrcode.CaptureActivity;
 import com.hint.utils.ToastUtils;
 
@@ -68,14 +70,14 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         setTabSelect(0);
     }
 
-    HomeFragment homeFragment;
+    FileInfoFragment homeFragment;
     HomeFragment findFragment;
     AboutUsFragment meFragment;
     Fragment[] mFragments;
 
     // 初始化数据
     private void initViewPager() {
-        homeFragment = new HomeFragment();
+        homeFragment = FileInfoFragment.newInstance(FileInfo.TYPE_MP4);
         findFragment = new HomeFragment();
         meFragment = new AboutUsFragment();
         mFragments = new Fragment[]{homeFragment, findFragment, meFragment};

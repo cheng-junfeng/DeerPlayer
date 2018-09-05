@@ -64,6 +64,8 @@ dependencies {
     implementation "org.greenrobot:greendao:$rootProject.ext.greendaoVer"
     //lottie
     implementation 'com.airbnb.android:lottie:2.0.0-beta3'
+    //glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
 
     api project(':library')
     implementation project(':hintlib')

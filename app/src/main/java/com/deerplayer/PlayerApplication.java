@@ -11,6 +11,8 @@ import com.library.utils.TLog;
 import com.tencent.smtt.sdk.QbSdk;
 
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class PlayerApplication extends Application {
     private final static String TAG = "PlayerApplication";
@@ -66,4 +68,6 @@ public class PlayerApplication extends Application {
         }
         return false;
     }
+
+    public static Executor MAIN_EXECUTOR = Executors.newFixedThreadPool(5);
 }
