@@ -12,6 +12,6 @@
     </integer-array>
     <!--发现页图片对应的位子-->
     <string-array name="find_gv_title1">
-        <item>优酷</item>
+        <item>验证</item>
     </string-array>
 </resources>

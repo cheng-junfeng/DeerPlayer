@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -16,7 +15,7 @@ import com.deerplayer.R;
 import com.deerplayer.app.adapter.BaseDelegateAdapter;
 import com.deerplayer.app.adapter.BaseViewHolder;
 import com.deerplayer.ui.home.contract.HomeFragmentContract;
-import com.deerplayer.ui.other.webview.WebViewX5Activity;
+import com.deerplayer.ui.player.PlayerOnlineActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,14 +73,12 @@ public class HomeFragmentPresenter implements HomeFragmentContract.Presenter {
                     @Override
                     public void onClick(View view) {
                         Intent intent = null;
-                        Bundle extras = new Bundle();
                         switch (position) {
                             case 0:
-                                extras.putString(WebViewX5Activity.BUNDLE_KEY_TITLE, "优酷视频");
-                                extras.putString(WebViewX5Activity.BUNDLE_KEY_URL, "https://www.youku.com");
-
-                                intent = new Intent(mContext, WebViewX5Activity.class);
-                                mContext.startActivity(intent, extras);
+                                intent = new Intent(mContext, PlayerOnlineActivity.class);
+                                intent.putExtra(PlayerOnlineActivity.BUNDLE_KEY_TITLE, "验证");
+                                intent.putExtra(PlayerOnlineActivity.BUNDLE_KEY_URL, "ws://172.16.93.36:8082?4");
+                                mContext.startActivity(intent);
                                 break;
                                 default:break;
                         }

@@ -2,7 +2,9 @@ package com.deerplayer.ui.local.fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -14,6 +16,8 @@ import com.deerplayer.app.base.BaseFragment;
 import com.deerplayer.ui.local.adapter.FileInfoAdapter;
 import com.deerplayer.ui.local.config.FileInfo;
 import com.deerplayer.ui.local.util.FileUtils;
+import com.deerplayer.ui.player.PlayerLocalActivity;
+import com.deerplayer.ui.player.PlayerOnlineActivity;
 import com.hint.utils.ToastUtils;
 
 import java.util.List;
@@ -71,7 +75,11 @@ public class FileInfoFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 FileInfo fileInfo = mFileInfoList.get(position);
-                FileUtils.openFile(mContext, fileInfo.getFilePath());
+//                FileUtils.openFile(mContext, fileInfo.getFilePath());
+                Intent intent = new Intent(mContext, PlayerLocalActivity.class);
+                intent.putExtra(PlayerLocalActivity.BUNDLE_KEY_TITLE, fileInfo.getName());
+                intent.putExtra(PlayerLocalActivity.BUNDLE_KEY_PATH, fileInfo.getFilePath());
+                mContext.startActivity(intent);
             }
         });
     }

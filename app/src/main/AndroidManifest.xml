@@ -48,5 +48,7 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.other.webview.WebViewX5Activity" />
+        <activity android:name=".ui.player.PlayerLocalActivity" />
+        <activity android:name=".ui.player.PlayerOnlineActivity" />
     </application>
 </manifest>
