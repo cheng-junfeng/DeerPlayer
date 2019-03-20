@@ -35,8 +35,8 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
 
     @BindView(R.id.rb_home)
     RadioButton rbHome;
-    @BindView(R.id.rb_time)
-    RadioButton rbTime;
+//    @BindView(R.id.rb_time)
+//    RadioButton rbTime;
     @BindView(R.id.rb_my)
     RadioButton rbMy;
 
@@ -71,29 +71,29 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     }
 
     FileInfoFragment homeFragment;
-    HomeFragment findFragment;
+//    HomeFragment findFragment;
     AboutUsFragment meFragment;
     Fragment[] mFragments;
 
     // 初始化数据
     private void initViewPager() {
         homeFragment = FileInfoFragment.newInstance(FileInfo.TYPE_MP4);
-        findFragment = new HomeFragment();
+//        findFragment = new HomeFragment();
         meFragment = new AboutUsFragment();
-        mFragments = new Fragment[]{homeFragment, findFragment, meFragment};
+        mFragments = new Fragment[]{homeFragment, meFragment};
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), mFragments);
         vpMain.setAdapter(adapter);
         vpMain.addOnPageChangeListener(this);
-        vpMain.setOffscreenPageLimit(2);
+        vpMain.setOffscreenPageLimit(1);
     }
 
     RadioButton[] radioButtons;
 
     private void initRadio() {
-        radioButtons = new RadioButton[3];
+        radioButtons = new RadioButton[2];
         radioButtons[0] = rbHome;
-        radioButtons[1] = rbTime;
-        radioButtons[2] = rbMy;
+        radioButtons[1] = rbMy;
+//        radioButtons[2] = rbMy;
         radioButtons[0].setChecked(true);
         for (int i = 0; i < radioButtons.length; i++) {
             Drawable[] drawables = radioButtons[i].getCompoundDrawables();
@@ -103,17 +103,14 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         }
     }
 
-    @OnClick({R.id.rb_home, R.id.rb_time, R.id.rb_my})
+    @OnClick({R.id.rb_home, R.id.rb_my})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rb_home:
                 setTabSelect(0);
                 break;
-            case R.id.rb_time:
-                setTabSelect(1);
-                break;
             case R.id.rb_my:
-                setTabSelect(2);
+                setTabSelect(1);
                 break;
         }
     }
@@ -127,9 +124,6 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
                 setTitle("本地", MAIN_TOOLBAR);
                 break;
             case 1:
-                setTitle("网络", MAIN_TOOLBAR);
-                break;
-            case 2:
                 setTitle("我的", MAIN_TOOLBAR);
                 break;
         }
@@ -157,21 +151,21 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     public void onPageScrollStateChanged(int state) {
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_home, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_capture:
-                readyGo(CaptureActivity.class);
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_home, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.action_capture:
+//                readyGo(CaptureActivity.class);
+//                break;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

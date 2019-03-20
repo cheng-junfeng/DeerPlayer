@@ -30,22 +30,22 @@
             android:text="本地"
             android:layout_weight="1" />
 
-        <RadioButton
-            android:id="@+id/rb_time"
-            android:paddingTop="@dimen/offset_10dp"
-            android:paddingBottom="@dimen/offset_5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:button="@null"
-            android:gravity="center"
-            android:drawableTop="@drawable/tab_video_selector"
-            android:drawablePadding="@dimen/offset_5dp"
-            android:textSize="@dimen/text_size_small"
-            android:checked="false"
-            android:text="网络"
-            android:textColor="@color/tab_host_text_normal"
-            android:layout_weight="1" />
+        <!--<RadioButton-->
+            <!--android:id="@+id/rb_time"-->
+            <!--android:paddingTop="@dimen/offset_10dp"-->
+            <!--android:paddingBottom="@dimen/offset_5dp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@null"-->
+            <!--android:button="@null"-->
+            <!--android:gravity="center"-->
+            <!--android:drawableTop="@drawable/tab_video_selector"-->
+            <!--android:drawablePadding="@dimen/offset_5dp"-->
+            <!--android:textSize="@dimen/text_size_small"-->
+            <!--android:checked="false"-->
+            <!--android:text="网络"-->
+            <!--android:textColor="@color/tab_host_text_normal"-->
+            <!--android:layout_weight="1" />-->
 
         <RadioButton
             android:id="@+id/rb_my"

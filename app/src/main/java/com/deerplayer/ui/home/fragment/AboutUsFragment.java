@@ -81,7 +81,7 @@ public class AboutUsFragment extends BaseFragment {
 
         mItemData = new AboutListEntity();
         mItemData.setTitle(mAboutArray[1]);
-        mItemData.setSubTitle("https://www.youku.com");
+        mItemData.setSubTitle("https://cheng-junfeng.github.io/");
         mListViewDataAdapter.getDataList().add(mItemData);
 
         mListViewDataAdapter.notifyDataSetChanged();
@@ -97,7 +97,7 @@ public class AboutUsFragment extends BaseFragment {
                     case 1:
                         // company
                         extras.putString(WebViewX5Activity.BUNDLE_KEY_TITLE, mAboutArray[1]);
-                        extras.putString(WebViewX5Activity.BUNDLE_KEY_URL, "https://www.youku.com");
+                        extras.putString(WebViewX5Activity.BUNDLE_KEY_URL, "https://cheng-junfeng.github.io/");
 
                         readyGo(WebViewX5Activity.class, extras);
                         break;
